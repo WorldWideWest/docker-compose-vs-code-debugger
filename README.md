@@ -1,2 +1,1 @@
-# docker-compose-vs-code-debugger
-Template for debugging python and nodejs apps while running multiple containers
+# Integration of Docker Compose with VS Code Debugger in Python and Node.js
