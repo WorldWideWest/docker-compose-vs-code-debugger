@@ -1,0 +1,30 @@
+version: '3.9'
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    env_file: docker.env
+    networks:
+      - local-network
+  api:
+    container_name: api
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    env_file: docker.env
+    networks:
+      - local-network
+    volumes:
+      - /app/node_modules
+      - .:/app
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 3000:3000
+      - 9229:9229
+    command: yarn start:debug
+volumes: 
+  postgres_data:
+    driver: local
+networks:
+  local-network:
+    name: local-network
