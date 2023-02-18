@@ -1,6 +1,6 @@
 # Integration of Docker Compose with VS Code Debugger in Python and Node.js
 
-To run the applications run the following commands:
+To run the applications go into the desired folder and run the commands:
 
 To start the application run the command:
 ```bash
